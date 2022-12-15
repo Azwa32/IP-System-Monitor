@@ -48,25 +48,38 @@ this is the key for the firebase database. The contents of this file hve been de
 /Web Client/templates/index.html
 .html for the web app
 
+# Requirements
+
+-Server App-
+import os
+import time
+import firebase_admin
+
+-Database-
+Firebase Firestore Database
+
+-Web app-
+import Flask
+import firebase_admin
 
 # Design choices
 
-programming language choices
-I had a need for this app at my workplace as an Audio Visual Integrator for a particular installation about 4000kms away. I knew we were sending equipment to site shortly and I'd need to get the app loaded onto a pc ready for an installer to put into place. A week after this the equipment would be onsite and installers would be working over the weekend when I'm not online, this is why a public facing web app was so useful for this project. This gave me 1 week to make the server app and another week to make the web app, all after hours from my day job.
+-programming language choices-
+I had a need for this app at my workplace as an Audio Visual Integrator for a particular installation about 4000kms away. I knew we were sending equipment to site shortly and I'd need to get the app loaded onto a pc ready for an installer to put into place. A week after this the equipment would be onsite and installers would be working over the weekend when I'm not online, this is why a public facing web app was so useful for this project. This gave me 1 week to make the server app and another week to make the web app, amostly after hours from my day job.
 
-detect ip address or mac address
-detecting devices by ip address seemed obvious as once a device can be pinged at its ip address it proves a device is in a reasonable state for further config so it was the logical choice.
+-detect ip address or mac address-
+Detecting devices by ip address seemed obvious as once a device can be pinged at its ip address it proves a device is in a reasonable state for further config so it was the logical choice.
 
 There may be a benefit to having ip addresses detected by mac address for a random assignment DHCP network but for this project I decided to stick with IP address as the reference
 
-database type/hosting choices
-I wanted to utilise a free cloud hosted database service. I had also wanted to stick with SQL as I had some familiarity with it. Azure was a logical choice for SQL but I wasn't confident i could get it set up intime. In the end i chose Firebase Firestore as it seemed quick to get up and running and the documentation was comprehensive with python examples.
+-database type/hosting choices-
+I wanted to utilise a free cloud hosted database service. I also wanted to stick with SQL as I had recent familiarity with it. Azure was a logical choice for SQL but I wasn't confident i could get it set up intime. In the end i chose Firebase Firestore as it seemed quick to get up and running and the documentation was comprehensive with python examples.
 
-scripting
-I had initially wanted to use HTML CSS JS for the web app however I had more confidence I could get a FLASK instance up and running in the timeframe.
+-scripting language-
+I had initially wanted to use HTML CSS JS for the web app however I had more confidence I could get a FLASK instance up and running in the timeframe as I has recent experience with Flask from CS50.
 
-website hosting choices
-Initially i planned to host on Azure with the db but with the move to firestore I planned to use their project hosting. Once I got to uploading the web app I discovered I'd need to use cloud store due to the FLASK instance and would require a credit card on file and wasn't suitable. Pythonanywhere was quick to setup and given its only a single page web app seemed suitable enough. Due to the simple setup it allowed me to get thr project uploaded by the deadline.
+-website hosting choices-
+Initially I planned to host on Azure with the db but with the move to firestore I planned to then use their project hosting. Once I got to uploading the web app I discovered I'd need to use cloud store due to the FLASK instance and would require a credit card on file and that wasn't suitable. Pythonanywhere was quick to setup and given its only a single page web app seemed suitable enough. Due to the simple setup it allowed me to get thr project uploaded by the deadline.
 
 log in/no log in
 As there is no personal or secure information presented in the HTML it seemed like overkill and needlessly comples to have the app behind a login
@@ -74,5 +87,7 @@ As there is no personal or secure information presented in the HTML it seemed li
 # Summary
 The app has delivered the neccecary functionaity for the mean time, it has already been deployed and working as intended. I have also modified to make a local only version which I have also been using.
 
-There are other opportunities to improve from here, using a different stack and some attention to the UI are the first areas I look at.
+There are other opportunities to improve from here, using a different stack and some attention to the UI are the first areas I look at. I'd also be interested in expoanding the capability of the server app and including functions for different IP addressing methods. At the moment the system is most suitable for a static assigned IP address but not suitable for random assignment. Id also like to turn the server app into a downloadable portable app and create web logins on the website so multiple user can each monitor their own site. Also an email function for notifying a user when a device drops offline. However before I make further changes I'd like to see how the app functions in a work environment over the comming months.
+
+AA
 
