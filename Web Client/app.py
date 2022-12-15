@@ -1,5 +1,4 @@
-import threading
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, render_template
 from firebase_admin import credentials, firestore, initialize_app, db
 
 # Initialise Flask App
@@ -45,6 +44,7 @@ def index():
 
     # Render page
     return render_template("index.html", devices=l)
+
 
 
 
