@@ -14,7 +14,7 @@ db_collection = db.collection(u'%s' %DbName)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-
+@app.route("/")
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
